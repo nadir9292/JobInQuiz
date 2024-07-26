@@ -1,0 +1,15 @@
+{
+  "name": "Job'in Quiz",
+  "short_name": "jobinquiz",
+  "theme_color": "#FF914D",
+  "background_color": "#FF914D",
+  "display": "standalone",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    { "src": "/icons/logo-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icons/logo-256.png", "type": "image/png", "sizes": "256x256" },
+    { "src": "/icons/logo-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

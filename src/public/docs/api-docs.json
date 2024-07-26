@@ -1,0 +1,24 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "quiz'in JOB ",
+        "description": "API Documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/test": {
+            "get": {
+                "tags": [
+                    "test"
+                ],
+                "summary": "Get list of categories",
+                "operationId": "534345cc804f44e137eff24218b89ca3",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        }
+    }
+}

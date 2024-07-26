@@ -1,0 +1,748 @@
+openapi: 3.0.3
+info:
+  title: Job'IN Quiz
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:3002'
+paths:
+  /api/v1/test:
+    get:
+      summary: ''
+      operationId: getApiV1Test
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "tu es connecté à l'api quiz dev"
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/register:
+    post:
+      summary: 'POST api/v1/auth/register'
+      operationId: pOSTApiv1authregister
+      description: "permet de s'enregistrer"
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                lastname:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+                  example: xrdxiau
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: bsplwirvzghjzvqpfu
+                password:
+                  type: string
+                  description: ''
+                  example: ullam
+<<<<<<< HEAD
+=======
+=======
+                  example: lje
+=======
+                  example: xrdxiau
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: bsplwirvzghjzvqpfu
+                password:
+                  type: string
+                  description: ''
+<<<<<<< HEAD
+                  example: sit
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: ullam
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+                role_id:
+                  type: string
+                  description: ''
+                  example: '3'
+                  enum:
+                    - '2'
+                    - '3'
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+<<<<<<< HEAD
+                  example: nreichert@example.com
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  example: nreichert@example.com
+=======
+                  example: murl97@example.net
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: nreichert@example.com
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+              required:
+                - lastname
+                - name
+                - password
+                - password_confirmation
+                - role_id
+                - email
+      security: []
+  /api/v1/auth/login:
+    post:
+      summary: ''
+      operationId: postApiV1AuthLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+                  example: mills.dagmar@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: veniam
+<<<<<<< HEAD
+=======
+=======
+                  example: bryana94@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: dignissimos
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: mills.dagmar@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: veniam
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/profil:
+    get:
+      summary: ''
+      operationId: getApiV1Profil
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/update/profil:
+    put:
+      summary: ''
+      operationId: putApiV1UpdateProfil
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+                  example: jennifer.predovic@example.com
+                name:
+                  type: string
+                  description: ''
+                  example: dolorem
+<<<<<<< HEAD
+=======
+=======
+                  example: gene.jast@example.org
+                name:
+                  type: string
+                  description: ''
+                  example: dolores
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: jennifer.predovic@example.com
+                name:
+                  type: string
+                  description: ''
+                  example: dolorem
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+                lastname:
+                  type: string
+                  description: ''
+                  example: qui
+              required:
+                - email
+                - name
+                - lastname
+      security: []
+  /api/v1/update/password:
+    put:
+      summary: ''
+      operationId: putApiV1UpdatePassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: ''
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+                  example: quod
+                password:
+                  type: string
+                  description: ''
+                  example: rem
+<<<<<<< HEAD
+=======
+=======
+                  example: aliquam
+                password:
+                  type: string
+                  description: ''
+                  example: quia
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: quod
+                password:
+                  type: string
+                  description: ''
+                  example: rem
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+              required:
+                - current_password
+                - password
+      security: []
+  /api/v1/logout:
+    post:
+      summary: ''
+      operationId: postApiV1Logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/delete/profil:
+    delete:
+      summary: ''
+      operationId: deleteApiV1DeleteProfil
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/user/quiz:
+    get:
+      summary: ''
+      operationId: getApiV1UserQuiz
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/entreprise/quiz:
+    get:
+      summary: ''
+      operationId: getApiV1EntrepriseQuiz
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/level/store:
+    post:
+      summary: ''
+      operationId: postApiV1LevelStore
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+                  example: et
+                points:
+                  type: integer
+                  description: ''
+                  example: 3
+                slug:
+                  type: string
+                  description: ''
+                  example: repellendus
+<<<<<<< HEAD
+=======
+=======
+                  example: repudiandae
+=======
+                  example: et
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+                points:
+                  type: integer
+                  description: ''
+                  example: 3
+                slug:
+                  type: string
+                  description: ''
+<<<<<<< HEAD
+                  example: aut
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: repellendus
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+              required:
+                - name
+      security: []
+  /api/v1/levels:
+    get:
+      summary: 'récupération de tous les levels(niveaux) récupére une collection de données et pas une seule donnée'
+      operationId: rcuprationDeTousLesLevelsniveauxRcupreUneCollectionDeDonnesEtPasUneSeuleDonne
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/level/destroy:
+    delete:
+      summary: ''
+      operationId: deleteApiV1LevelDestroy
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                slug:
+                  type: string
+                  description: ''
+<<<<<<< HEAD
+                  example: sit
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  example: sit
+=======
+                  example: reiciendis
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: sit
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+              required:
+                - slug
+      security: []
+  /api/v1/domains:
+    get:
+      summary: ''
+      operationId: getApiV1Domains
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/domain/store:
+    post:
+      summary: ''
+      operationId: postApiV1DomainStore
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+<<<<<<< HEAD
+                  example: rem
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  example: rem
+=======
+                  example: omnis
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: rem
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+              required:
+                - name
+      security: []
+  '/api/v1/domain/delete/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1DomainDeleteId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the delete.'
+<<<<<<< HEAD
+        example: ullam
+        required: true
+        schema:
+          type: string
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+        example: ullam
+        required: true
+        schema:
+          type: string
+=======
+        example: facere
+        required: true
+        schema:
+          type: string
+  /api/v1/questions:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+>>>>>>> cbcb4e8 (fix 2)
+=======
+        example: ullam
+        required: true
+        schema:
+          type: string
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+  /api/v1/question/store:
+    post:
+      summary: ''
+      operationId: postApiV1QuestionStore
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 150 characters.'
+<<<<<<< HEAD
+                  example: lpltvzjffuzosnoojyafljpi
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  example: lpltvzjffuzosnoojyafljpi
+=======
+                  example: fzatch
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: lpltvzjffuzosnoojyafljpi
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+                domain_id:
+                  type: integer
+                  description: ''
+                  example: 7
+                level_id:
+                  type: integer
+                  description: ''
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+                  example: 14
+                points:
+                  type: integer
+                  description: ''
+                  example: 15
+<<<<<<< HEAD
+=======
+=======
+                  example: 6
+                points:
+                  type: integer
+                  description: ''
+                  example: 12
+>>>>>>> cbcb4e8 (fix 2)
+=======
+                  example: 14
+                points:
+                  type: integer
+                  description: ''
+                  example: 15
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+                answers:
+                  type: object
+                  description: 'Must have at least 2 items.'
+                  example: []
+                  properties: {  }
+              required:
+                - title
+                - domain_id
+                - level_id
+                - answers
+      security: []
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  '/api/v1/question/show/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: tempora
+        required: true
+        schema:
+          type: string
+  '/api/v1/question/update/{id}':
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 150 characters.'
+                  example: tpyuosianikmkdlmpfo
+                domain_id:
+                  type: integer
+                  description: ''
+                  example: 12
+                level_id:
+                  type: integer
+                  description: ''
+                  example: 3
+                points:
+                  type: integer
+                  description: ''
+                  example: 20
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the update.'
+        example: facere
+        required: true
+        schema:
+          type: string
+>>>>>>> cbcb4e8 (fix 2)
+=======
+>>>>>>> 3c2d6e5 (Feature/profile (#17))
+>>>>>>> main
+tags:
+  -
+    name: Endpoints
+    description: ''

@@ -1,0 +1,193 @@
+#version: "3.8"
+
+#  DOCKER COMPOSE POUR le local
+# networks:
+#   laravel_network:
+#     name: laravel_network
+
+# services:
+#   nginx:
+#     build:
+#       context: .
+#       dockerfile: nginx.dockerfile
+#     container_name: nginx
+#     ports:
+#       - 3002:80
+#       - 443:443
+#     volumes:
+#       - ./src:/var/www/html:delegated
+#     networks:
+#       - laravel_network
+#     depends_on:
+#       - php
+#       - mysql
+#       - phpmyadmin
+#       - redis
+#       - adminer
+
+#     #  - react
+
+#   php:
+#     build:
+#       context: .
+#       dockerfile: php.dockerfile
+#       target: php
+
+#     container_name: php
+#     volumes:
+#       - ./src:/var/www/html:delegated
+#     networks:
+#       - laravel_network
+#     ports:
+#       - 8080:80
+#   api:
+#     container_name: api
+#     build:
+#       context: .
+#       target: php
+#       args:
+#         - APP_ENV=${APP_ENV}
+#     environment:
+#       - APP_ENV=${APP_ENV}
+#     working_dir: /app
+#     volumes:
+#       - ./:/app
+#     ports:
+#       - 8080:80
+#     depends_on:
+#       - nginx
+#   mysql:
+#     image: mysql:8
+#     environment:
+#       MYSQL_DATABASE: quizdevbdd
+#       MYSQL_USER: homestead
+#       MYSQL_PASSWORD: secret
+#       MYSQL_ROOT_PASSWORD: secret
+#     container_name: mysql
+#     ports:
+#       - 4306:3306
+#     volumes:
+#       - ./mysql:/var/lib/mysql
+#     networks:
+#       - laravel_network
+
+#   artisan:
+#     build:
+#       context: .
+#       dockerfile: php.dockerfile
+#     container_name: artisan
+#     volumes:
+#       - ./src:/var/www/html
+#     working_dir: /var/www/html
+#     entrypoint: ["php", "artisan"]
+#     networks:
+#       - laravel_network
+
+#   composer:
+#     image: composer:latest
+#     container_name: composer
+#     volumes:
+#       - ./src:/var/www/html
+#     working_dir: /var/www/html
+#     networks:
+#       - laravel_network
+
+#   phpmyadmin:
+#     image: phpmyadmin
+#     container_name: phpmyadmin
+#     ports:
+#       - 2023:80
+#     environment:
+#       PMA_HOST: mysql
+#       PMA_USER: homestead
+#       PMA_PASSWORD: secret
+#     networks:
+#       - laravel_network
+#   redis:
+#     container_name: redis
+#     image: redis:latest
+#     ports:
+#       - 6379:6379
+#     networks:
+#       - laravel_network
+# nextjs:
+#   build:
+#     context: .  # chemin vers lequel se trouve notre dossier dockerfile pour next
+#     dockerfile: nextJS.dockerfile
+#   container_name: next-js
+#   ports:
+#     - "3001:3001"
+#   volumes:
+#     - ./front:/front
+#   networks:
+#     - laravel_network
+#   depends_on:
+#     - nginx
+# service adminer gestionnaire de base de donnée
+# adminer:
+#   image: adminer:latest
+#   container_name: adminer
+#   restart: always
+#   ports:
+#     - 2025:8080
+#   environment:
+#     ADMINER_DEFAULT_SERVER: mysql
+#     ADMINER_DESIGN: dracula
+#     MYSQL_DATABASE: quizdevbdd
+#     MYSQL_USER: homestead
+#     MYSQL_PASSWORD: secret
+#     MYSQL_ROOT_PASSWORD: secret
+#   networks:
+#     - laravel_network
+
+# version: "3.8"
+networks:
+  laravel_network:
+    name: laravel_network
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      target: php
+      args:
+        - APP_ENV=${APP_ENV}
+    environment:
+      - APP_ENV=${APP_ENV}
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+    networks:
+      - laravel_network
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - 2023:80
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: homestead
+      PMA_PASSWORD: secret
+    networks:
+      - laravel_network
+  mysql:
+    container_name: database
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: quizdevbdd
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - 4306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - laravel_network
+volumes:
+  db-data: ~
